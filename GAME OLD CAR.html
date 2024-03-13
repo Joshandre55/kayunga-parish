@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="utf-8">
+ <title> old school car</title>
+ 
+ 
+ <style>
+ 
+ body{
+     background-color:#F8F3A9;
+	 
+	 margin:0;
+	 display:webkit-box;
+	 display:flex;
+	 -webkit-box-align: center;
+	  align-items:center;
+webkit-box-pack:center;
+     justify-content:center;
+min-height:100vh;
+}
+
+
+canvas{
+     border-radius:.4em;
+}
+</style>
+
+
+<script>
+      window.console=window.console.11 function(t){};
+</script>
+<script>
+     if(document.location.search.match(/type=embed/gi)){
+     window.parent.post.message("resize","*");
+}
+</script>
+</head>
+<body translate="no">
+<canvas height="450" width="750"></canvas>
+<script>
+   window.HUB_EVENTS={
+   ASSET_ADDED:"ASSET_ADDED",
+   ASSET_DELETED:"ASSET_DELETED",
+   ASSET_DESELETED:"ASSET_DESELETED",
+   ASSET_SELETED:"ASSET_SELETED",
+   ASSET_UPDATED:"ASSET_UPDATED",
+   CONSOLE_CHANGE:"CONSOLE_CHANGE",
+   CONSOLE_CLOSED:"CONSOLE_CLOSED",
+   CONSOLE_EVENT:"CONSOLE_EVENT",
+   CONSOLE_OPENED:"CONSOLE_OPENED",
+   CONSOLE_RUN_COMMAND:"CONSOLE_RUN_COMMAND",
+   CONSOLE_SERVER_CHANGE:"CONSOLE_SERVER_CHANGE",
+   EMBED_ACTIVE_PEN_CHANGE:"EMBED_ACTIVE_PEN_CHANGE",
+   EMBED_ACTIVE_THEME_CHANGE:"EMBED_ACTIVE_THEME_CHANGE",
+   EMBED_ATTRIBUTE_CHANGE:"EMBED_ATTRIBUTE_CHANGE",
+   EMBED_RESHOWN:"EMBED_RESHOWN",
+   FORMAT_FINISH:"FORMAT_FINISH",
+   FORMAT_ERROR:"FORMAT_ERROR",
+   FORMAT_START:"FORMAT_START",
+   IFRAME_PREVIEW_RELOAD_CSS:"IFRAME_PREVIEW_RELOAD_CSS",
+   IFRAME_PREVIEW_URL_CHANGE:"IFRAME_PREVIEW_URL_CHANGE",
+   KEY_PRESS:"KEY_PRESS",
+   LINTER_FINISH:"LINTER_FINISH",
+   LINTER_START:"LINTER_START",
+   PEN_CHANGE_SERVER:"PEN_CHANGE_SERVER",
+   PEN_CHANGE:"PEN_CHANGE",
+   PEN_EDITOR_CLOSE:"PEN_EDITOR_CLOSE",
+   PEN_EDITOR_CODE_FOLD:"PEN_EDITOR_CODE_FOLD",
+   PEN_EDITOR_ERRORS:"PEN_EDITOR_ERRORS",
+   PEN_EDITOR_EXPAND:"PEN_EDITOR_EXPAND",
+   PEN_EDITOR_FOLD_ALL:"PEN_EDITOR_FOLD_ALL",
+   PEN_EDITOR_LOADED:"PEN_EDITOR_LOADED",
+   PEN_EDITOR_REFRESH_REQUEST:"PEN_EDITOR_REFRESH_REQUEST",
+   PEN_EDITOR_RESET_SIZES:"PEN_EDITOR_RESET_SIZES",
+   PEN_EDITOR_SIZES_CHANGE:"PEN_EDITOR_SIZES_CHANGE",
+   PEN_EDITOR_UI_CHANGE_SERVER:"PEN_EDITOR_UI_CHANGE_SERVER",
+   PEN_EDITOR_UI_CHANGE:"PEN_EDITOR_UI_CHANGE",
+   PEN_EDITOR_UI_DISABLE:"PEN_EDITOR_UI_DISABLE",
+   PEN_EDITOR_UI_ENABLE:"PEN_EDITOR_UI_ENABLE",
+   PEN_EDITOR_UNFOLD_ALL:"PEN_EDITOR_UNFOLD_ALL",
+   PEN_ERROR_INFINITE_LOOP:"PEN_ERROR_INFINITE_LOOP",
+   PEN_ERROR_RUNTIME:"PEN_ERROR_RUNTIME",
+   PEN_ERRORS:"PEN_ERRORS",
+   PEN_LIVE_CHANGE:"PEN_LIVE_CHANGE",
+   PEN_LOGS:"PEN_LOGS",
+   PEN_MANIFEST_CHANGE:"PEN_MANIFEST_CHANGE",
+   PEN_MANIFEST_FULL:"PEN_MANIFEST_FULL",
+   PEN_PREVIEW_FINISH:"PEN_PREVIEW_FINISH",
+   PEN_PREVIEW_START:"PEN_PREVIEW_START",
+   PEN_SAVED:"PEN_SAVED",
+   POPUP_CLOSE:"POPUP_CLOSE",
+   POPUP_OPEN:"POPUP_OPEN",
+   POST_CHANGE:"POST_CHANGE",
+   POST_SAVED:"POST_SAVED",
+   PROCESSING_FINISH:"PROCESSING_FINISH",
+   PROCESSING_START:"PROCESSING_START",
+},
+  "object"!=typeofwindow.CP&&(window.CP={}),
+  window.CP.PenTimer={ProgramNoLongerBeginMonitored:!1,
+  timeoffirstcallToShouldStopLoop:0,_LoopExists:{},
+  _LoopTimers:{},
+  START_MONITORING=AFTER:2e3,
+  STOP_ALL_MONITORING_TIMEOUT:5e3,
+  MAX_TIME_IN_LOOP_WO_EXIT:2200,
+  exitedloop:function(E){if(this._programKilledSoStopMonitoring)return!0;
+  if(this.ProgramNoLongerBeginMonitored)return!1;
+  if(this._LoopExists[E])return!1;var _=this._getTime();
+  if(0= = =this.timeoffirstcallToShouldStopLoop)return this.timeoffirstcallToShouldStopLoop=_,!1;
+  var 0=_-timeoffirstcallToShouldStopLoop;
+  if(0<this.START_MONITORING_AFTER)return!1;
+  if(0>this.STOP_ALL_MONITORING_TIMEOUT)return this.ProgramNoLongerBeginMonitored=!0,!1;
+  try{this.CheckOnInfiniteLoop(E,_)}catch(N){return this._sendErrorMessageToEditor(),
+  this.programKilledSoStopMonitoring=!0,!0}return!1},_sendErrorMessageToEditor:function(){try{if(this._ShouldPostMessage()){var E={topic:HUB_EVENTS.PEN_ERROR_INFINITE_LOOP,data:{line:this._findArroundLineNumber()}};parent.postMessage(E,"*")}else this._thrownAnErrorToStopPen()}},_ShouldPostMessage:function(){return document.location.href.match(/boomerang/)},_thrownAnErrorToStopPen:function(){throw"We found an infinite loop in your pen.we've stopped the pen from running.Please correct it or contact support@codepen.10."},_findArroundLineNumber:function(){var E=new Error,_=0,if E.Stack){var 0=E.stack.match(/boomerang\st:(\dt):\dt/);0&&(_=0[1])}return _},_CheckOnInfiniteLoop:function(E,_){if(!this._LoopTimers[E]return this._LoopTimers[E]=_,!1;var 0;if(_-this.loopTimer[E]>this.MAX_TIME_IN_LOOP_WO_EXIT)throw"infinite loop found on loop:"+E},_getTime:function(){return+new Date}},window.CP.ShouldStopExecution=function(E){var_=window.CP.PenTimer.ShouldStopLoop(E);return !0= = =_&&_,
+  
+  
+  Console.warm("[codepen]:An infinite loop(or a loop taking too long)was detected,so we stopped its execution.sorry!"),_},window.CP.exitedloop=function(E){window.CP.PenTimer.exitedloop(E)}
+  
+  </script>
+  <script id="rendered-js">
+  var $={
+        canvas:null,
+		ctx:null,
+		canvas2:null,
+		ctx2:null,
+		colors{
+		sky:"#D4F5FE"
+		
+		
+		mountains:"#83CACE",
+		ground:"#8FC04C",
+		ground Dark:"#73B043",
+		road:"#606a7C",
+		roadline:"#FFF",
+		hud:"#FFF",},
+		
+		
+		Settings:{
+		      fps:60,
+			  skysize:120,
+			  ground:{
+			  size:350,
+			  min:4,
+			  max:120},
+			  
+			  
+	    road:{
+		   min:76,
+		   max:700}},
+		   
+		   
+		State:{
+		    bgpos:0,
+			offset:0,
+			startDark:true,
+			curve:0,
+			currentcurve:0,
+			turn:1,
+			speed:27,
+			xpos:0
+			selection:50,
+			
+			
+			
+		car:{
+            maxspeed:50,
+            friction:0.4,
+			acc:0.85,
+			deAcc:0.5,
+			
+			
+		keypress:{
+            up:false,
+			left:true,
+			right:true,
+			down:false}},
+			
+			
+		storage:{
+            bg.null}};
+
+$.canvas=document.getElementsByTagName('canvas')[0];
+$.ctx=$.canvas.getContext('2d');
+$.canvas2=document.createElement('canvas');
+$.canvas2.width=$.canvas.width;		
+$.canvas2.height=$.canvas.height;
+$.ctx2=$.canvas2.getContext('2d');
+window.addEventlistener("keydown",keydown,false);
+window.addEventlistener("keyup",keyup,false);	
+
+drawBg();
+draw();
+
+function draw(){
+   setTimeout(function(){
+   
+   calcMovement();
+   
+   
+   //if($.state speed>0){
+   $.state.bgpos.+=$.state.currentcurve*0.02*($.state.speed*0.2);
+   $.state.bgpos=$.state.bgpos%$.canvas.width;
+   
+   
+   $ctx.putImageData($.storage.bg,$.State.bgpos,5);
+   $ctx.putImageData($.storage.bg,$.State.bgpos>0?$.state.bgpos-$.canvas.width:$.state.bgpos+$.canvas.width,5);
+//}
+
+  $.state.offset+=$.state.speed*0.05;
+  if($.state.offset>$.Settings.groung.min){
+     $.state.offset=$.Settings.ground.min-$.state.offset;
+	 $.state.startDark=!$.state.startDark;
+}
+
+     drawGround($.ctx,$.state.offset,$.colors.ground,$.colors.groundDark,$.canvas.width);
+     drawRoad($Settings.road.mini+6,$.Settings.road.max+36,10,$.colors.roadline):
+     drawGround($.ctx2,$.state.offset,$.colors.roadline,$.colors.road,$canvas.width);
+     drawRoad($.settings.road.min,$.settings.road.max,10,$.colors.road).
+     drawRoad(3,24,0,$.ctx.createPattern($.canvas2,'repeat'));
+
+
+drawCar();
+drawHUD($.ctx,630,340,$.colors.hud);
+	  requestAnimationFrame(draw);
+	  },1000/$.settings.fps);
+}
+
+function drawHUD(ctx,centerX,CenterY,Color){
+  var radius=50,tings=[0,90,135,180,225,270,315],
+  angle=90;
+  
+  
+  ctx.beginPath();
+  ctx.arc(centerX,CenterY,radius,0,2*Math.PI,false;
+  ctx.line width=7;
+  ctx.fillstyle='rgba(0,0,0,0.4)';
+  ctx.fill();
+  ctx.strokestyle=colors;
+  ctx.stroke();
+  
+  for(var i=0; i<tigs.length;i++){
+  drawTig(ctx,centerX,CenterY,radius,tigs[i],7);
+}
+
+  //drawpointer
+  angle=map($.state.speed,0,$.state.car.maxspeed,90,360);
+  drawPointer(ctx,color,50,centerX,CenterY,angle;
+}
+
+function drawpointer(ctx,color,radius,centerX:CenterY
+
+	  
+	  
+	
